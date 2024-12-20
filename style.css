@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(145deg, #3f6d85, #add8e6);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.container {
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.heading h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.heading span {
+    color: #f9b800;
+    font-weight: 600;
+}
+
+.heading p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #f9b800;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button:hover {
+    background-color: #e89b00;
+    transform: translateY(-4px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+button:focus {
+    outline: none;
+}
+
+
+footer {
+    margin-top: 40px;
+    font-size: 14px;
+    color: #888;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 25px;
+        max-width: 90%;
+    }
+
+    .heading h1 {
+        font-size: 28px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 16px;
+    }
+}
+
+.magicNumber {
+    font-size: 60px;
+    font-weight: bold;
+    color: #f9b800;
+    opacity: 0;
+    transform: scale(0);
+    animation: revealMagic 1.5s ease-out forwards;
+}
+
+@keyframes revealMagic {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.confetti {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+    pointer-events: none;
+}
+
+.confetti span {
+    position: absolute;
+    background-color: #f9b800;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    animation: confettiFall 1.5s linear infinite;
+}
+
+@keyframes confettiFall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+    }
+    100% {
+        transform: translateY(300px) rotate(360deg);
+    }
+}
